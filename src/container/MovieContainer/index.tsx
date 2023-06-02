@@ -38,7 +38,7 @@ const MovieContainer: React.FC<MovieContainerProps> = ({ movieData, setMovieData
             </div>
             <div className='flex justify-center py-4'>
                 <Pagination
-                    count={100}
+                    count={200}
                     sx={{
                         '& .MuiPaginationItem-root': {
                             color: '#fff',

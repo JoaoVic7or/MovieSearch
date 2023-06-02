@@ -12,7 +12,7 @@ interface HeaderProps {
     const handleGetName = async (e: FormEvent) => {
         e.preventDefault();
         try {
-            const data = await Api(movie);
+            const data = await Api(movie, 1);
             if ('message' in data) {
                 console.error(data.message);
             } else {
