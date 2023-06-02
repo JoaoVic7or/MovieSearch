@@ -3,6 +3,8 @@
 <p>Site que utiliza a API do OMDB e mostra um catálogo de filmes com 200 páginas, além disso permite que você pesquise por um título. Ao clicar no botão 'Detalhes', 
   você receberá informações sobre o filme, como enredo, ano de lançamento, duração, gênero e avaliações do IMDB, Rotten Tomatoes e Metacritic.</p>
 
+Deploy: https://movie-search-rouge-nine.vercel.app/
+
 ### Tecnologias utilizadas
 - React
 - Typescript
