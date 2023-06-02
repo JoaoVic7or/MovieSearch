@@ -26,7 +26,7 @@ const MovieContainer: React.FC<MovieContainerProps> = ({ movieData, setMovieData
         fetchData();
     }, [setMovieData, currentPage]);
 
-    const handlePageChange = (event: React.ChangeEvent<unknown>, page: number) => {
+    const handlePageChange = (_event: React.ChangeEvent<unknown>, page: number) => {
         setCurrentPage(page);
     };
 
@@ -50,7 +50,7 @@ const MovieContainer: React.FC<MovieContainerProps> = ({ movieData, setMovieData
                         },
                     }}
                     onChange={handlePageChange}
-                />   
+                />
             </div>
         </>
     );
