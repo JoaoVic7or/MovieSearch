@@ -9,21 +9,14 @@ interface CardMovieProps {
         imdbID: string;
         Year: string;
     };
-    setBadgeContent: (value: number | ((prevCount: number) => number)) => void;
 }
 
-const CardMovie: React.FC<CardMovieProps> = ({ movieData, setBadgeContent }) => {
+const CardMovie: React.FC<CardMovieProps> = ({ movieData }) => {
     const { Poster, Title, Year } = movieData;
-    const [isAddedToList, setIsAddedToList] = useState(false);
     const [open, setOpen] = useState(false);
 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-
-    const handleAddToList = () => {
-        setBadgeContent((prevCount: number) => prevCount + 1);
-        setIsAddedToList(true);
-    };
 
     return (
         <>
@@ -40,20 +33,9 @@ const CardMovie: React.FC<CardMovieProps> = ({ movieData, setBadgeContent }) => 
                         {Title}
                     </Typography>
 
-                    <div className="flex gap-2 ">
-                        <Button variant="contained" className="w-1/2" onClick={handleOpen}>
+                    <Button variant="contained" className="w-full" onClick={handleOpen}>
                             Detalhes
-                        </Button>
-                        <Button
-                            variant="contained"
-                            className="w-1/2"
-                            color="success"
-                            onClick={handleAddToList}
-                            disabled={isAddedToList}
-                        >
-                            {isAddedToList ? "Adicionado" : "+ Lista"}
-                        </Button>
-                    </div>
+                    </Button>
                 </CardContent>
             </Card>
             {open && <CustomModal handleClose={handleClose} title={Title} />}

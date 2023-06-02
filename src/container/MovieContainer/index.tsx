@@ -6,10 +6,9 @@ import { Pagination } from '@mui/material';
 interface MovieContainerProps {
     movieData: any[];
     setMovieData: (data: any[]) => void;
-    setBadgeContent: (value: number | ((prevCount: number) => number)) => void;
 }
 
-const MovieContainer: React.FC<MovieContainerProps> = ({ movieData, setMovieData, setBadgeContent }) => {
+const MovieContainer: React.FC<MovieContainerProps> = ({ movieData, setMovieData }) => {
     const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
@@ -32,9 +31,9 @@ const MovieContainer: React.FC<MovieContainerProps> = ({ movieData, setMovieData
 
     return (
         <>
-            <div className="flex flex-wrap gap-4 justify-center pb-4">
+            <div className="flex flex-wrap gap-4 justify-center pt-4">
                 {movieData.map((movie) => (
-                    <CardMovie key={movie.imdbID} movieData={movie} setBadgeContent={(value) => setBadgeContent(value)} />
+                    <CardMovie key={movie.imdbID} movieData={movie} />
                 ))}
             </div>
             <div className='flex justify-center py-4'>
